@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: n9p5rapvr-go-gitops
+  description: This is GitOps manifest for n9p5rapvr-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: n9p5rapvr-go
+    backstage.io/kubernetes-id: n9p5rapvr-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: n9p5rapvr-go-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:n9p5rapvr-go
